@@ -9,16 +9,19 @@
  */
 public class Zeffit
 {
-    // TODO: add final variables
+    private static final int GREEN_THRESHOLD = 1;
+    private static final int BLUE_THRESHOLD = 2;
+    private static final int RED_THRESHOLD = 3;
+    private static final int EXPLODE_THRESHOLD = 4;
 
-    // TODO: add instance variable(s)
+    private int hits;
 
     /**
      * Constructor for objects of class Zeffit
      */
     public Zeffit()
     {
-        // TODO: initialize instance variable(s)
+        hits = 0; // hit count
     }
 
     /**
@@ -27,7 +30,7 @@ public class Zeffit
      */
     public void takesHit()
     {
-        // TODO: replace this line with your code
+        hits++; //hit = hit + 1
     }
 
     /**
@@ -37,7 +40,7 @@ public class Zeffit
      */
     public boolean isHitFree()
     {
-        // TODO: replace this line with your code
+        return hits == 0;
     }
 
     /**
@@ -47,7 +50,7 @@ public class Zeffit
      */
     public boolean isGreen()
     {
-        // TODO: replace this line with your code
+        return hits >= GREEN_THRESHOLD && hits < BLUE_THRESHOLD;
     }
 
     /**
@@ -57,7 +60,7 @@ public class Zeffit
      */
     public boolean isBlue()
     {
-        // TODO: replace this line with your code
+        return hits >= BLUE_THRESHOLD && hits < RED_THRESHOLD;
     }
 
     /**
@@ -67,7 +70,7 @@ public class Zeffit
      */
     public boolean isRed()
     {
-        // TODO: replace this line with your code
+        return hits >= RED_THRESHOLD && hits < EXPLODE_THRESHOLD;
     }
 
     /**
@@ -77,7 +80,7 @@ public class Zeffit
      */
     public boolean isDead()
     {
-        // TODO: replace this line with your code
+        return hits >= EXPLODE_THRESHOLD;
     }
 }
 
